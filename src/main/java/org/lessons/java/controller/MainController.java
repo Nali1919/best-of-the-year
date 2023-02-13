@@ -3,7 +3,6 @@ package org.lessons.java.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.lessons.java.Animali;
 import org.lessons.java.Movie;
 import org.lessons.java.Song;
 import org.springframework.stereotype.Controller;
@@ -28,25 +27,25 @@ public class MainController {
 	public String movie(Model model) {
 		List<Movie> movies = getBestMovies();
 		model.addAttribute("movies", movies);
-		return "movie";
+		return "movies";
 	}
 
 	@GetMapping("/songs")
 	public String song(Model model) {
 		List<Song> song = getBestSongs();
 		model.addAttribute("songs", song);
-		return "song";
+		return "songs";
 	}
 
-	@GetMapping("/movies/{id}") 	
-	public String title(Model model, @PathVariable("id") String id ) {
-		model.addAttribute("titolo", getBestMovies().get(Integer.parseInt(id)-1));
+	@GetMapping("/movies/{id}")
+	public String title(Model model, @PathVariable("id") String id) {
+		model.addAttribute("titolo", getBestMovies().get(Integer.parseInt(id) - 1));
 		return "titlemovie";
 	}
-	
-	@GetMapping("/songs/{id}") 	
-	public String titlesong(Model model, @PathVariable("id") String id ) {
-		model.addAttribute("titolo", getBestSongs().get(Integer.parseInt(id)-1));
+
+	@GetMapping("/songs/{id}")
+	public String titlesong(Model model, @PathVariable("id") String id) {
+		model.addAttribute("titolo", getBestSongs().get(Integer.parseInt(id) - 1));
 		return "titlesong";
 	}
 

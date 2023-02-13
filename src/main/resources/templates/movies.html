@@ -9,9 +9,9 @@
 <h1 class="text-center">LISTA DEI FILM</h1>
 
 
-<ul th:if="${movie.size()>0}" class="list-group text-center">
-	<li th:each="s:${movie}" th:with="titolo=${s.getTitolo()}">
-		<a th:text="${titolo}" th:href="@{'/movies/' + ${s.getId()}}" class="display-1 text-decoration-none"></a>
+<ul th:if="${movies.size()>0}" class="list-group text-center">
+	<li th:each="s:${movies}" th:with="title=${s.getTitolo()}">
+		<a th:text="${title}" th:href="@{'/movies/' + ${s.getId()}}" class="display-1 text-decoration-none"></a>
 	</li> 
 </ul>
  <a th:href="@{/}" class="mt-5 d-flex justify-content-center display-5 text-decoration-none">Ritorna alla Home</a>

@@ -9,8 +9,8 @@
 <h1 class="text-center">LISTA MUSICA</h1>
 
 
-<ul th:if="${song.size()>0}" class="list-group text-center">
-	<li th:each="s:${song}" th:with="titolo=${s.getTitolo()}">
+<ul th:if="${songs.size()>0}" class="list-group text-center">
+	<li th:each="s:${songs}" th:with="title=${s.getTitolo()}">
 		<a th:text="${title}" th:href="@{'/songs/' + ${s.getId()}}" class="display-1 text-decoration-none"></a>
 	</li> 
 </ul>
