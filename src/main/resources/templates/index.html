@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Pagina</title>
+<div th:replace="~{fragment :: head}"></div>
+<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+<h1 class="text-center">Benvenuto nel mio sito web</h1>
+<div class="text-center">
 
-<span>Best of the year by</span> <span th:text=" ${nome}"></span>
-
+<span>Best of the year by</span> <span th:text="${nome}" class="verde px-5"></span>
+</div>
+<div th:replace="~{fragment :: navbar('')}"></div>
+<div th:replace="~{fragment :: script}"></div>
 </body>
 </html>
